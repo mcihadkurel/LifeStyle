@@ -13,10 +13,16 @@
   </div>
   <div class="navbar-right">
   <div class="login">
+  <% if user_signed_in? %>
+  <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
+  <%= link_to "EDİT", edit_user_registration_path %>
+  <% else %>
   <%= link_to "LOGİN", user_session_path%>
   |
-  
   <%= link_to "REGİSTER", new_user_registration_path %>
+
+  <% end %>
+
   </div>
   </div>
 </nav>
