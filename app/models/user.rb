@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
     has_many :votes, foreign_key: "user_id"
     has_many :articles, foreign_key: "author_id"
+
+    has_one_attached :avatar
 end
