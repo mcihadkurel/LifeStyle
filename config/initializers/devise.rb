@@ -5,10 +5,11 @@ Devise.setup do |config|
 
   require 'devise/orm/active_record'
 
-  config.case_insensitive_keys = [:email, :username]
+  config.case_insensitive_keys = [:email]
 
-  config.strip_whitespace_keys = [:email, :username]
-
+  config.strip_whitespace_keys = [:email]
+  
+  config.authentication_keys = [ :login ]
  
   config.skip_session_storage = [:http_auth]
 
