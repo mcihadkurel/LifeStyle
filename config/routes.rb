@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
   resources :articles
-  resources :users
+  resources :users, only: [:create]
+  get '/register', to: 'users#register'
   resources :sessions, only: [:create]
   root "articles#index"
 end
