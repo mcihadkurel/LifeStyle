@@ -1,0 +1,40 @@
+<h1>Sign Up</h1>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="gravatar_edit">
+    <%= f.label :Profilepic %><br />
+      <%= f.file_field :avatar, class: "form-control",
+        placeholder: 'Upload picture',
+        id: "change-img-field",
+        direct_upload: true
+        %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "username", class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
+  </div>
+
+  <div class="actions text-center mt-5">
+    <%= f.submit "Sign up", class: "btn btn-lg btn-info" %>
+  </div>
+<% end %>
