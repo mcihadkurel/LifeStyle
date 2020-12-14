@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
   
     if @user.save
-      redirect_to root_path, notice: 'Welcome! We have sent you the link to login to our app'
+      redirect_to login_path, notice: 'Welcome! We have sent you the link to login to our app'
     else
       render :register
     end

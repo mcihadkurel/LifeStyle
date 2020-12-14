@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_name(params[:email])
-    if user && user.authenticate(params[:name])
-      session[:user_id] = user.id
+    user = User.find_by_name(params[:name])
+    if session[:user_id] = user.id
       redirect_to root_url, notice: "Logged in!"
+    else
       flash.now.alert = "Wrong username"
     end
   end
