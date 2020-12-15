@@ -1,9 +1,9 @@
 <div class="container">
 
-<h1>Hi; <br><%= @user.email %></h1>
+<h1>Hi; <br><%= current_user.name %></h1>
 <div class="col-6">
 <%= image_tag(current_user.avatar, alt: "avatar", class: "avatar rounded-circle", id: "avatar") %>
 </div>
 
 </div>
-  </div>
+</div>

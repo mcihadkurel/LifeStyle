@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :users
   get '/register', to: 'users#register'
   get '/login', to: 'sessions#new', as: 'login'
-  resources :sessions
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'profile', to: 'users#show', as: 'profile'
+  resources :sessions, only: [:new, :create, :destroy]
   root "articles#index"
   
 end

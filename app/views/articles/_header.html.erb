@@ -13,10 +13,16 @@
   </div>
   <div class="navbar-right mr-3">
   <div class="login">
+  <% if current_user %>
+  Hi <%= current_user.name %>
+  <%= link_to "LOGOUT", logout_path %>
+  |
+  <%= link_to "PROFİLE", profile_path %>
+  <% else %>
   <%= link_to "LOGİN", login_path %>
   |
   <%= link_to "SİGNUP", register_path %>
-
+  <% end %>
   </div>
   </div>
 </nav>

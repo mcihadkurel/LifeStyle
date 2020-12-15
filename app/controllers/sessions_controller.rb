@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    @user = User.new
   end
 
   def create
@@ -8,6 +9,7 @@ class SessionsController < ApplicationController
       redirect_to root_url, notice: "Logged in!"
     else
       flash.now.alert = "Wrong username"
+      render "register"
     end
   end
 
