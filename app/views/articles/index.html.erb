@@ -1,4 +1,14 @@
 <%= render 'header' %>
+
+<ul>
+<% @articles.each do |article| %>
+<li>
+<strong><%= article.title %></strong>
+<%= article.text %>
+<%= article.author_id %>
+</li>
+<% end %>
+</ul>
 <%= render 'footer' %>
 
 
