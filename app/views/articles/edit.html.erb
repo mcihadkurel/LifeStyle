@@ -1,6 +1,11 @@
-<h1>Editing Article</h1>
+<h1>Editing Article <%= @article.title %></h1>
 
-<%= render 'form', article: @article %>
+<%= form_with(model: @article, local: true) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
 
-<%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>
+    <%= f.label :description %>
+    <%= f.text_area :text %>
+
+    <%= f.submit %>
+<% end %>
