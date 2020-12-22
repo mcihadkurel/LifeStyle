@@ -41,15 +41,12 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
-    respond_to do |format|
-      if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
-        format.json { render :show, status: :ok, location: @article }
-      else
-        format.html { render :edit }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-      end
-    end
+    @article = Article.find(params[:id])
+    article_params =
+    params.require(:article).
+    permit(:title, :text)
+    @article.update(article_params)
+    redirect_to articles_path(@articles)
   end
 
   # DELETE /articles/1
