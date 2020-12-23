@@ -10,6 +10,9 @@
 <% end %>
 </ul>
 <%= link_to "Edit", edit_article_path(:id), class: "button" %>
+<%= link_to "Delete", @article, class: "button", method: :delete %>
+<br>
+<%= link_to "Add New Article", new_article_path, class: "button" %>
 <%= render 'footer' %>
 
 
