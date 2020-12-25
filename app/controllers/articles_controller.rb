@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     article_params =
     params.require(:article).
-    permit(:title, :text)
+    permit(:title, :text, :image_file)
     @event.destroy
     redirect_to articles_path
   end

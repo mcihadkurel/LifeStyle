@@ -4,6 +4,9 @@
 <% @articles.each do |article| %>
 <li>
 <strong><%= article.title %></strong>
+<div class="image">
+<%= image_tag(article.image_file) %>
+</div>
 <%= article.text %>
 <%= article.author_id %>
 </li>
