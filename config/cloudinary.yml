@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dkkpg448m
+  api_key: '188995297167982'
+  api_secret: nzNPih26OjX16mvACbGQy1bCbAY
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dkkpg448m
+  api_key: '188995297167982'
+  api_secret: nzNPih26OjX16mvACbGQy1bCbAY
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dkkpg448m
+  api_key: '188995297167982'
+  api_secret: nzNPih26OjX16mvACbGQy1bCbAY
+  enhance_image_tag: true
+  static_file_support: false

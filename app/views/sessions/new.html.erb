@@ -1,0 +1,11 @@
+<div class="container">
+<h1>Log In</h1>
+
+<%= form_tag sessions_path do %>
+  <div class="field">
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, params[:name], autofocus: true, autocomplete: "username", class: "form-control" %>
+  </div>
+  <div class="actions"><%= submit_tag "Log In", class: "btn btn-lg btn-info" %></div>
+<% end %>
+</div>
